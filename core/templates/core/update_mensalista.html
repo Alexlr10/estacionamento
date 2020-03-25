@@ -1,0 +1,13 @@
+<h2> Update mensalista: {{ mensalista }} </h2>
+
+
+
+
+<form action="{% url 'mensalista_update' mensalista.id %}" method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Cadastrar</button>
+</form>

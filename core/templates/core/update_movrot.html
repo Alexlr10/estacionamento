@@ -1,0 +1,13 @@
+<h2> Update movrot: {{ movrot }} </h2>
+
+
+
+
+<form action="{% url 'movrot_update' movrot.id %}" method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Cadastrar</button>
+</form>

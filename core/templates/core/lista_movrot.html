@@ -1,12 +1,13 @@
 <h2> Lista mov</h2>
 
 <ul>
+{% for movrot in movrot %}
+    <li>
+        <a href="{% url 'movrot_update' movrot.id %}">{{ movrot.veiculo }}</a>
+    </li>
 
-    {% for movrot in movrot %}
-    <li> {{ movrot.checkin }} -- {{ movrot.veiculo }}</li>
     {% endfor %}
 </ul>
-
 
 <form action="{% url 'movrot_create' %}" method="POST">
 

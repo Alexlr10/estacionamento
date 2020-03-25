@@ -1,11 +1,14 @@
 <h2> Lista movmensalista</h2>
 
 <ul>
+{% for movmensalista in movmensalista %}
+    <li>
+        <a href="{% url 'movmensalista_update' movmensalista.id %}">{{ movmensalista.mensalista }}</a>
+    </li>
 
-    {% for movmensalista in movmensalista %}
-    <li> {{ movmensalista.mensalista }}</li>
     {% endfor %}
 </ul>
+
 
 <form action="{% url 'movmensalista_create' %}" method="POST">
 
