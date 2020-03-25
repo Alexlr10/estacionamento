@@ -6,3 +6,12 @@
     <li> {{ pessoas.nome }}</li>
     {% endfor %}
 </ul>
+
+<form action="{% url 'pessoa_create' %}" method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Cadastrar</button>
+</form>

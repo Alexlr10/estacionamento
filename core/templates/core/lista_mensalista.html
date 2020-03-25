@@ -1,0 +1,17 @@
+<h2> Lista mensalista</h2>
+
+<ul>
+
+    {% for mensalista in mensalista %}
+    <li> {{ mensalista.veiculo }}</li>
+    {% endfor %}
+</ul>
+
+<form action="{% url 'movrot_create' %}" method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Cadastrar</button>
+</form>

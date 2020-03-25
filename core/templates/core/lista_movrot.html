@@ -1,0 +1,18 @@
+<h2> Lista mov</h2>
+
+<ul>
+
+    {% for movrot in movrot %}
+    <li> {{ movrot.checkin }} -- {{ movrot.veiculo }}</li>
+    {% endfor %}
+</ul>
+
+
+<form action="{% url 'movrot_create' %}" method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Cadastrar</button>
+</form>
